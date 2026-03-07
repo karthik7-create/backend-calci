@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins="https://minicalci.vercel.app")
 public class CalculatorController {
 
     @Autowired
