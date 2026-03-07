@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.idea
+*.iml
+.vscode
+
+# Build output (we rebuild inside Docker)
+backend/target
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Docs
+*.md
