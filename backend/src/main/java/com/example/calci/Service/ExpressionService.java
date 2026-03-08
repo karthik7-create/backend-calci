@@ -41,9 +41,9 @@ public class ExpressionService {
 
             // Save to history
             CalciEntity entity = new CalciEntity();
-            entity.setNum1(null);
-            entity.setNum2(null);
-            entity.setOperation(null);
+            entity.setNum1(0.0);
+            entity.setNum2(0.0);
+            entity.setOperation("EXPRESSION");
             entity.setExpression(expressionStr);
             entity.setResult(result);
             entity.setCalculationType(CalculationType.EXPRESSION.name());
