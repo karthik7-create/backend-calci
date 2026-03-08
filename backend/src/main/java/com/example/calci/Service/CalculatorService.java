@@ -2,6 +2,7 @@ package com.example.calci.Service;
 
 import com.example.calci.Dto.CalculationRequest;
 import com.example.calci.Entity.CalciEntity;
+import com.example.calci.Enums.CalculationType;
 import com.example.calci.Enums.OperationType;
 import com.example.calci.Repository.CalciRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,11 +46,21 @@ public class CalculatorService {
                 break;
         }
 
+        // Build a human-readable expression string
+        String operationSymbol = switch (operation) {
+            case ADD -> "+";
+            case SUBTRACT -> "-";
+            case MULTIPLY -> "*";
+            case DIVIDE -> "/";
+        };
+
         CalciEntity entity = new CalciEntity();
 
         entity.setNum1(num1);
         entity.setNum2(num2);
         entity.setOperation(operation.toString());
+        entity.setExpression(num1 + " " + operationSymbol + " " + num2);
+        entity.setCalculationType(CalculationType.SIMPLE.name());
         entity.setResult(result);
         entity.setTimestamp(LocalDateTime.now());
 

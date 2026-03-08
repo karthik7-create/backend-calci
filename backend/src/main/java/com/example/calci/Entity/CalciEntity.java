@@ -16,12 +16,17 @@ public class CalciEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  id;
+    private Long id;
 
-    private double num1;
-    private double num2;
+    private Double num1;
+    private Double num2;
     private String operation;
     private double result;
     private LocalDateTime timestamp;
+
+    @Column(columnDefinition = "TEXT")
+    private String expression;
+
+    private String calculationType;
 
 }
